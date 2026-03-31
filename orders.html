@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Orders - ShopEasy</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <h2>Your Orders</h2>
+
+    <!-- Dynamic orders will be shown here -->
+    <ul id="order-list"></ul>
+
+    <a href="index.html">Back to Shop</a>
+
+    <script>
+      const list = document.getElementById("order-list");
+
+      // Get latest order from localStorage
+      const orders = JSON.parse(localStorage.getItem("orders")) || [];
+
+      // Clear existing content
+      list.innerHTML = "";
+
+      // Display orders
+      orders.forEach((order) => {
+        const li = document.createElement("li");
+        li.textContent = `${order.name} - ₹${order.price}`;
+        list.appendChild(li);
+      });
+    </script>
+  </body>
+</html>

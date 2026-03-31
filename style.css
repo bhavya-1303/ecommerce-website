@@ -1,0 +1,152 @@
+/* 🌐 General */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f4f4f4;
+  transition: 0.3s;
+}
+
+/* 🌙 Dark Mode */
+body.dark {
+  background: #121212;
+  color: white;
+}
+
+/* 🔝 Header */
+header {
+  background: #333;
+  color: white;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+}
+
+.cart {
+  font-weight: bold;
+}
+
+/* 🌙 Toggle Button */
+#dark-toggle {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+/* 🔍 Search Box */
+.search-box {
+  padding: 20px;
+  text-align: center;
+}
+
+.search-box input {
+  padding: 10px;
+  width: 250px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* 🎯 Filters */
+.filters {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.filters button {
+  margin: 5px;
+  padding: 10px 15px;
+  border: none;
+  background: #333;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.filters button:hover {
+  background: #555;
+}
+
+/* 🛍 Products Grid */
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* 📦 Product Card */
+.product {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+
+body.dark .product {
+  background: #1e1e1e;
+}
+
+/* 🖼 Product Image */
+.product img {
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+}
+
+/* 🏷 Product Text */
+.product h3 {
+  margin: 10px 0;
+}
+
+/* 🔘 Buttons */
+.product button {
+  margin: 5px;
+  padding: 8px 10px;
+  border: none;
+  background: #333;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.product button:hover {
+  background: #555;
+}
+
+/* 🛒 Cart & Wishlist */
+#cart-items div,
+#wishlist-items div {
+  background: white;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+body.dark #cart-items div,
+body.dark #wishlist-items div {
+  background: #1e1e1e;
+}
+
+/* ❌ Remove Button */
+#cart-items button,
+#wishlist-items button {
+  margin-left: 10px;
+  background: red;
+}
+
+/* 🔗 Links */
+a {
+  color: blue;
+}
+
+/* 📱 Responsive */
+@media (max-width: 600px) {
+  .search-box input {
+    width: 90%;
+  }
+}
