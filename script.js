@@ -3,137 +3,92 @@ const products = [
   {
     name: "Smartphone",
     price: 15000,
-    image: "images/mobile.png",
+    image: "mobile.png",
     category: "electronics",
   },
   {
     name: "Laptop",
     price: 55000,
-    image: "images/laptop.png",
+    image: "laptop.png",
     category: "electronics",
   },
   {
     name: "Headphones",
     price: 2000,
-    image: "images/headphone.png",
+    image: "headphone.png",
     category: "electronics",
   },
   {
     name: "Smart Watch",
     price: 3000,
-    image: "images/smartwatch.png",
+    image: "smartwatch.png",
     category: "electronics",
   },
   {
     name: "Camera",
     price: 40000,
-    image: "images/camera.png",
+    image: "camera.png",
     category: "electronics",
   },
   {
     name: "Bluetooth Speaker",
     price: 1800,
-    image: "images/speaker.png",
+    image: "speaker.png",
     category: "electronics",
   },
 
-  {
-    name: "T-Shirt",
-    price: 700,
-    image: "images/T-shirt.png",
-    category: "fashion",
-  },
-  {
-    name: "Jeans",
-    price: 1500,
-    image: "images/jeans.png",
-    category: "fashion",
-  },
-  {
-    name: "Jacket",
-    price: 2500,
-    image: "images/jacket.png",
-    category: "fashion",
-  },
-  {
-    name: "Sneakers",
-    price: 3000,
-    image: "images/sneakers.png",
-    category: "fashion",
-  },
+  { name: "T-Shirt", price: 700, image: "T-shirt.png", category: "fashion" },
+  { name: "Jeans", price: 1500, image: "jeans.png", category: "fashion" },
+  { name: "Jacket", price: 2500, image: "jacket.png", category: "fashion" },
+  { name: "Sneakers", price: 3000, image: "sneakers.png", category: "fashion" },
   {
     name: "Sunglasses",
     price: 900,
-    image: "images/sunglasses.png",
+    image: "sunglasses.png",
     category: "fashion",
   },
 
   {
     name: "Backpack",
     price: 1200,
-    image: "images/backpack.png",
+    image: "backpack.png",
     category: "accessories",
   },
-  {
-    name: "Wallet",
-    price: 1500,
-    image: "images/wallet.png",
-    category: "accessories",
-  },
-  {
-    name: "Belt",
-    price: 400,
-    image: "images/belt.png",
-    category: "accessories",
-  },
-  { name: "Cap", price: 300, image: "images/cap.png", category: "accessories" },
+  { name: "Wallet", price: 1500, image: "wallet.png", category: "accessories" },
+  { name: "Belt", price: 400, image: "belt.png", category: "accessories" },
+  { name: "Cap", price: 300, image: "cap.png", category: "accessories" },
 
-  {
-    name: "Table Lamp",
-    price: 800,
-    image: "images/tablelamp.png",
-    category: "home",
-  },
-  {
-    name: "Wall Clock",
-    price: 600,
-    image: "images/wallclock.png",
-    category: "home",
-  },
-  { name: "Chair", price: 2500, image: "images/chair.png", category: "home" },
+  { name: "Table Lamp", price: 800, image: "tablelamp.png", category: "home" },
+  { name: "Wall Clock", price: 600, image: "wallclock.png", category: "home" },
+  { name: "Chair", price: 2500, image: "chair.png", category: "home" },
   {
     name: "Bedsheet",
     price: 1200,
-    image: "images/bedsheet.png",
+    image: "bedsheet.png",
     category: "home",
   },
 
   {
     name: "Gaming Mouse",
     price: 800,
-    image: "images/gaming-mouse.png",
+    image: "gaming-mouse.png",
     category: "electronics",
   },
   {
     name: "Keyboard",
     price: 1200,
-    image: "images/keyboard.png",
+    image: "keyboard.png",
     category: "electronics",
   },
   {
     name: "Power Bank",
     price: 1500,
-    image: "images/powerbank.png",
+    image: "powerbank.png",
     category: "electronics",
   },
 
-  { name: "Books", price: 500, image: "images/books.png", category: "home" },
-  {
-    name: "Water Bottle",
-    price: 500,
-    image: "images/bottle.png",
-    category: "home",
-  },
+  { name: "Books", price: 500, image: "books.png", category: "home" },
+  { name: "Water Bottle", price: 500, image: "bottle.png", category: "home" },
 ];
 
 // 🛒 CART + ❤️ WISHLIST
@@ -155,7 +110,7 @@ function displayProducts(list) {
     div.className = "product";
 
     div.innerHTML = `
-      <img src="${p.image}">
+      <img src="${p.image}" alt="${p.name}">
       <h3>${p.name}</h3>
       <p>₹${p.price}</p>
       <button onclick="addToCart('${p.name}')">Add to Cart</button>
@@ -263,11 +218,10 @@ function removeFromWishlist(index) {
   displayWishlist();
 }
 
-// 🛒 BUY NOW → ONLY STORE LATEST ORDER (FIXED)
+// 🛒 BUY NOW → ONLY STORE LATEST ORDER
 function placeOrder(name, price) {
   const order = { name, price };
 
-  // 🔥 Replace old orders (important fix)
   localStorage.setItem("orders", JSON.stringify([order]));
 
   alert("Order placed successfully!");
